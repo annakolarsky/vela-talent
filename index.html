@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vela Talent | Risk-Free D2D Sales Recruiting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #EDE7DD;
+            --card-cream: #F6F2EA;
+            --chocolate: #2C221E;
+            --chocolate-light: #4A3B35;
+            --accent-warm: #C88A58;
+            --accent-hover: #B07545;
+            --border-color: #DAD1C2;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif, -apple-system, sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--chocolate);
+            line-height: 1.6;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 20px;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--chocolate);
+            text-decoration: none;
+        }
+        .nav-buttons { display: flex; gap: 12px; align-items: center; }
+        .btn-outline {
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--chocolate);
+            border: 1.5px solid var(--chocolate);
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .btn-outline:hover { background-color: var(--chocolate); color: var(--bg-cream); }
+        .btn-solid {
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            background-color: var(--chocolate);
+            color: var(--bg-cream);
+            border: 1.5px solid var(--chocolate);
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .btn-solid:hover { background-color: var(--chocolate-light); border-color: var(--chocolate-light); }
+        main { max-width: 1000px; margin: 0 auto; padding: 60px 20px 100px 20px; }
+        .hero { text-align: center; max-width: 800px; margin: 0 auto 80px auto; }
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 68px);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: clamp(18px, 2.5vw, 22px);
+            color: var(--chocolate-light);
+            margin-bottom: 36px;
+        }
+        .hero-cta-group { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+        .btn-large { padding: 16px 32px; font-size: 16px; border-radius: 10px; }
+        .problem-section {
+            background-color: var(--card-cream);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+        .problem-section h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+        .problem-section p { color: var(--chocolate-light); font-size: 16px; }
+        .steps-container { margin-bottom: 80px; }
+        .section-title {
+            text-align: center;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: var(--accent-warm);
+            margin-bottom: 50px;
+        }
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .step-card {
+            background-color: var(--card-cream);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 36px 30px;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+        .step-card:hover { transform: translateY(-4px); }
+        .step-link { display: block; text-decoration: none; color: inherit; cursor: pointer; }
+        .step-link:hover { border-color: var(--accent-warm); }
+        .step-number { font-size: 14px; font-weight: 800; color: var(--accent-warm); margin-bottom: 16px; letter-spacing: 1px; }
+        .step-card h4 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+        .step-card p { font-size: 15px; color: var(--chocolate-light); line-height: 1.5; }
+        .guarantee-banner {
+            background-color: var(--chocolate);
+            color: var(--bg-cream);
+            border-radius: 16px;
+            padding: 50px 40px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .free-pill-wrap { text-align: center; margin-bottom: 100px; }
+        .free-pill {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--chocolate-light);
+        }
+        .free-pill::before {
+            content: "\2713";
+            color: var(--accent-warm);
+            font-weight: 800;
+            margin-right: 8px;
+        }
+        .guarantee-banner h3 { font-size: clamp(24px, 4vw, 32px); font-weight: 700; margin-bottom: 16px; }
+        .guarantee-banner p { font-size: 18px; opacity: 0.85; max-width: 600px; margin: 0 auto; }
+        .action-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: center; }
+        .action-box {
+            background-color: var(--card-cream);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px 30px;
+        }
+        .action-box h4 { font-size: 24px; font-weight: 700; margin-bottom: 10px; }
+        .action-box p { color: var(--chocolate-light); font-size: 15px; margin-bottom: 24px; }
+        footer {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            color: var(--chocolate-light);
+            font-size: 14px;
+        }
+        @media(max-width: 768px) { .hero h1 { font-size: 38px; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Vela Talent</a>
+        <div class="nav-buttons">
+            <a href="apply.html" class="btn-outline">Need a job?</a>
+            <a href="hire.html" class="btn-solid">Need to hire?</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Churn is expensive. We're not.</h1>
+            <p>68% of B2C and hybrid field sales teams lose 1/3 of reps every year. We recruit reps who stick.</p>
+            <div class="hero-cta-group">
+                <a href="hire.html" class="btn-solid btn-large">I'm hiring sales reps</a>
+                <a href="apply.html" class="btn-outline btn-large">I'm looking for a sales job</a>
+            </div>
+        </section>
+
+        <div class="problem-section">
+            <h3>We connect sales talent to high intensity sales teams</h3>
+            <p>We match pre-screened sales reps with sales teams so you skip the job boards and hire people who perform and stay.</p>
+        </div>
+
+        <section class="steps-container">
+            <div class="section-title">The Vela Process for Employers</div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h4>We vet.</h4>
+                    <p>Thousands of interviews taught us what predicts a stayer.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h4>You decide.</h4>
+                    <p>We bring finalists — you approve who starts.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h4>We guarantee it.</h4>
+                    <p>You pay only when you get the results we promised.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="steps-container">
+            <div class="section-title">The Vela Process for Job Seekers</div>
+            <div class="steps-grid">
+                <a href="apply.html" class="step-card step-link">
+                    <div class="step-number">01</div>
+                    <h4>Apply today.</h4>
+                    <p>Create a profile to start the matching process.</p>
+                </a>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h4>Get prepped.</h4>
+                    <p>Get matched with job opportunities and prepped to interview.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h4>Interview and start your new job.</h4>
+                    <p>Interview, get placed, and start your new job.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="guarantee-banner">
+            <h3>The 30-Day Skin-In-The-Game Guarantee</h3>
+            <p>You only pay if your new hire stays 30 days. If they don't, you don't pay.</p>
+        </div>
+
+        <div class="free-pill-wrap">
+            <span class="free-pill">Always free for those seeking a job</span>
+        </div>
+
+        <section id="forms" class="action-split">
+            <div class="action-box">
+                <h4>Need a job?</h4>
+                <p>Ready to sell? Join our talent network.</p>
+                <a href="apply.html" class="btn-solid">Apply as a Rep</a>
+            </div>
+            <div class="action-box">
+                <h4>Need to hire?</h4>
+                <p>Scale your sales team in record time with vetted talent.</p>
+                <a href="hire.html" class="btn-solid">Request Candidates</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Vela Talent (joinvelatalent.com). All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
